@@ -16,7 +16,7 @@ export default function ProfilePortrait({ showPhoto }: { showPhoto: boolean }) {
     // Update every tab-icon candidate so browsers cannot choose the other portrait.
     const originals = new Map<HTMLLinkElement, Record<string, string | null>>();
     const attributes = {
-      href: showPhoto ? "/icons/profile-192.png" : "/icons/mascot-192.png",
+      href: showPhoto ? "/icons/profile-192.png" : "/icons/mascot-192.png?v=2",
       type: "image/png",
       sizes: "192x192",
     };
