@@ -22,7 +22,7 @@ const karstar = localFont({
 
 const handwritten = Caveat({
   subsets: ["latin"],
-  weight: "600",
+  weight: "400",
   variable: "--font-handwritten",
   display: "swap",
 });

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import TechBadge from "../ui/tech-badge";
 import userData from "@/config/userData";
 import {getCompany} from "@/config/companies";
@@ -11,7 +10,6 @@ export default function About(){
   <div className="mt-6 leading-relaxed">{userData.about}</div>
   <div className="mt-6"><div className="text-muted-foreground leading-relaxed">Previously, I worked at <TechBadge tag="RabbitLoader" href={getCompany('RabbitLoader')!.href}/> and <TechBadge tag="Wizwack" href={getCompany('Wizwack')!.href}/>, building high-traffic services, distributed systems and multiplayer backends.</div></div>
   <ProofOfWorkLink />
-  <div>Explore my <Link href="/background" className="border-b cursor-pointer border-dashed border-foreground/60 text-foreground hover:text-primary transition-colors">Background</Link>.</div>
   <div className="mt-6 flex flex-wrap gap-3"><Button asChild variant="outline"><a href="/Utkarsh-Saxena-Resume.pdf" download="Utkarsh-Saxena-Resume.pdf">Download resume</a></Button><Button asChild variant="outline"><a href="/Utkarsh-Saxena-Resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a></Button><Button asChild variant="outline"><a href="mailto:utkarshsaxena2012@gmail.com">Get in touch</a></Button></div>
  </div></div></div>;
 }
