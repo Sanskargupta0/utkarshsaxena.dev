@@ -1,4 +1,4 @@
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { Caveat, IBM_Plex_Mono, Inter } from "next/font/google";
 import localFont from "next/font/local";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -20,5 +20,12 @@ const karstar = localFont({
   display: "swap",
 });
 
-export { ibmPlexMono, inter, karstar };
+const handwritten = Caveat({
+  subsets: ["latin"],
+  weight: "600",
+  variable: "--font-handwritten",
+  display: "swap",
+});
+
+export { ibmPlexMono, inter, karstar, handwritten };
 

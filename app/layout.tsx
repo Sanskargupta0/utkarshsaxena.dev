@@ -1,7 +1,7 @@
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { ToastProvider } from "@/components/ui/toast";
 import { siteConfig } from "@/config/site";
-import { ibmPlexMono, inter, karstar } from "@/lib/fonts";
+import { ibmPlexMono, inter, karstar, handwritten } from "@/lib/fonts";
 import { SoundProvider } from "@/components/sound-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
@@ -77,7 +77,7 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${ibmPlexMono.variable} ${karstar.variable} ${inter.variable} font-sans antialiased bg-site-background noise-overlay min-h-svh`}
+        className={`${ibmPlexMono.variable} ${karstar.variable} ${inter.variable} ${handwritten.variable} font-sans antialiased bg-site-background noise-overlay min-h-svh`}
       >
         <PostHogProvider>
           <ThemeProvider
