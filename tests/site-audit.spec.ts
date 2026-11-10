@@ -25,13 +25,15 @@ for (const route of ['/', '/work', '/background', ...projectDetails.map(project 
   });
 }
 
-test('photo-based tab icons, share metadata and resume are wired', async ({ page, request }) => {
+test('mascot tab icon, share metadata and resume are wired', async ({ page, request }) => {
   await page.goto('/');
   await expect(page).toHaveTitle('Utkarsh Saxena');
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/social\.jpg$/);
   await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', /\/social\.jpg$/);
-  await expect(page.locator('link[rel="icon"][type="image/png"]')).toHaveAttribute('href', /\/icon\.png/);
-  for (const path of ['/icon.png', '/apple-icon.png', '/favicon.ico', '/social.jpg', '/icons/profile-192.png', '/icons/profile-512.png']) {
+  for (const icon of await page.locator('link[rel="icon"]').all()) {
+    await expect(icon).toHaveAttribute('href', '/icons/mascot-192.png');
+  }
+  for (const path of ['/icon.png', '/apple-icon.png', '/favicon.ico', '/social.jpg', '/icons/mascot-192.png', '/icons/profile-192.png', '/icons/profile-512.png']) {
     const asset = await request.get(path);
     expect(asset.ok(), path).toBe(true);
     expect(asset.headers()['content-type'], path).toContain('image/');
