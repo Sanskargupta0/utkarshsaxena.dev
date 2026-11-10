@@ -31,7 +31,7 @@ test('mascot tab icon, share metadata and resume are wired', async ({ page, requ
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/social\.jpg$/);
   await expect(page.locator('meta[name="twitter:image"]')).toHaveAttribute('content', /\/social\.jpg$/);
   for (const icon of await page.locator('link[rel="icon"]').all()) {
-    await expect(icon).toHaveAttribute('href', '/icons/mascot-192.png');
+    await expect(icon).toHaveAttribute('href', '/icons/mascot-192.png?v=2');
   }
   for (const path of ['/icon.png', '/apple-icon.png', '/favicon.ico', '/social.jpg', '/icons/mascot-192.png', '/icons/profile-192.png', '/icons/profile-512.png']) {
     const asset = await request.get(path);

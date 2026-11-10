@@ -21,12 +21,12 @@ for (const width of [1440, 375]) {
 
     const home = page.getByRole('link', { name: 'Return home', exact: true });
     const mascot = page.getByRole('button', { name: 'Boop the Utkarsh mascot', exact: true });
-    await assertIcon('/icons/mascot-192.png');
+    await assertIcon('/icons/mascot-192.png?v=2');
     await expect(mascot).toHaveCount(0);
     await home.click();
     await expect(page).toHaveURL('/');
     await expect(mascot).toBeVisible();
-    await assertIcon('/icons/mascot-192.png');
+    await assertIcon('/icons/mascot-192.png?v=2');
 
     const reactions = mascot.locator('span[style*="background-image"]').nth(1);
     await mascot.click();
@@ -46,7 +46,7 @@ for (const width of [1440, 375]) {
     await assertIcon('/icons/profile-192.png');
 
     await page.getByRole('button', { name: 'Show mascot', exact: true }).click();
-    await assertIcon('/icons/mascot-192.png');
+    await assertIcon('/icons/mascot-192.png?v=2');
     await mascot.focus();
     await page.keyboard.press('Enter');
     await expect(reactions).toHaveCSS('opacity', '1');
