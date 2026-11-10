@@ -1,59 +1,91 @@
 .callout {
-  position: relative;
-  margin-top: 24px;
-  padding-top: 60px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 28px;
 }
 
-.link {
-  border-bottom: 1px dashed color-mix(in oklab, var(--foreground) 60%, transparent);
+.background {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--foreground);
-  cursor: pointer;
-  transition: color 160ms ease;
 }
 
-.link:hover {
-  color: var(--primary);
+.background span {
+  border-bottom: 1px dashed color-mix(in oklab, var(--foreground) 60%, transparent);
 }
 
-.link:focus-visible {
+.work {
+  flex-shrink: 0;
+}
+
+.workLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--foreground);
+  border-radius: 6px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 160ms ease;
+}
+
+.workLink:hover {
+  opacity: 0.82;
+}
+
+.background:focus-visible,
+.workLink:focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: 4px;
 }
 
+/* Match the reference's w-36, flex-col, size-8 and text-xl/none treatment. */
 .note {
-  position: absolute;
-  top: 0;
-  left: 106px;
   display: flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--muted-foreground);
+  flex-direction: column;
+  align-items: flex-start;
+  width: 144px;
+  margin-top: 8px;
+  margin-left: 8px;
+  color: oklch(0.552 0.016 285.938);
+  font-family: var(--font-handwritten), cursive;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
   pointer-events: none;
   user-select: none;
+}
+
+:global(.dark) .note {
+  color: oklch(0.705 0.015 286.067);
 }
 
 .arrow {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
-  margin-top: 12px;
-  transform: rotate(-6deg);
+  transform: rotate(-6deg) scaleY(-1);
 }
 
 .handwriting {
   display: block;
-  padding-block: 4px;
-  font-family: var(--font-handwritten), cursive;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
+  margin-left: 12px;
+  padding-bottom: 4px;
   white-space: nowrap;
   transform: rotate(-6deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .link {
+  .workLink {
     transition: none;
   }
 }
