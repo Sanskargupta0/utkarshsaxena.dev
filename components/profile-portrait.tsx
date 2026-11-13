@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { Mascot } from "page-mascot";
+import { SmoothMascot } from "./smooth-mascot";
 import styles from "./profile-portrait.module.css";
 
 export default function ProfilePortrait({ showPhoto }: { showPhoto: boolean }) {
@@ -62,9 +62,11 @@ export default function ProfilePortrait({ showPhoto }: { showPhoto: boolean }) {
         <div className={styles.flipper} data-flipped={showPhoto}>
           <div className={styles.front} aria-hidden={!mascotInteractive} inert={!mascotInteractive}>
             <div className={styles.mascot}>
-              <Mascot
-                directions="/mascots/utkarsh-directions.webp"
-                reactions="/mascots/utkarsh-reactions.webp"
+              <SmoothMascot
+                tracking={!showPhoto}
+                directionGrid={5}
+                directions="/mascots/utkarsh-smooth-directions.webp"
+                reactions="/mascots/utkarsh-smooth-reactions.webp"
                 size={104}
                 label="Utkarsh mascot"
                 className="rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
