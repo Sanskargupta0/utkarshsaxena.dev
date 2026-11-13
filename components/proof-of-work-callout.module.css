@@ -1,0 +1,82 @@
+.sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.intro {
+  line-height: 1.5;
+}
+
+.background {
+  color: var(--foreground);
+  border-bottom: 1px dashed color-mix(in oklab, var(--foreground) 60%, transparent);
+}
+
+.work {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.buttonGroup {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--foreground);
+  border-radius: 6px;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.button:focus-visible,
+.background:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 4px;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: oklch(0.552 0.016 285.938);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+:global(.dark) .note {
+  color: oklch(0.705 0.015 286.067);
+}
+
+.arrow {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  transform: rotate(42deg);
+}
+
+.text {
+  white-space: nowrap;
+  transform: rotate(-6deg);
+}
