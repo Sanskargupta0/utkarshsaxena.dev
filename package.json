@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
     "test:deployment": "node --test tests/deployment-config.test.mjs",
+    "test:mascot": "node --test tests/mascot-tracking.test.mjs",
     "generate:github": "node scripts/generate-github-evidence.mjs"
   },
   "dependencies": {
